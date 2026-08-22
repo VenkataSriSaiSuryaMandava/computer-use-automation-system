@@ -1,0 +1,35 @@
+{
+  "status": "BUSINESS_OUTCOME",
+  "capability_id": "lookup_savings_balance",
+  "data": {},
+  "business_code": "MEMBER_NOT_FOUND",
+  "error_message": "ERROR 404: Member record '88888' does not exist in institution core records.",
+  "failed_step_id": null,
+  "execution_trace": [
+    {
+      "step_id": "nav_to_member_search",
+      "action": "click",
+      "status": "SUCCESS",
+      "duration_ms": 61.10,
+      "resolved_by": "aria_role_and_name",
+      "details": null
+    },
+    {
+      "step_id": "fill_member_id",
+      "action": "fill",
+      "status": "SUCCESS",
+      "duration_ms": 40.05,
+      "resolved_by": "aria_role_and_name",
+      "details": null
+    },
+    {
+      "step_id": "click_execute_query",
+      "action": "click",
+      "status": "SUCCESS",
+      "duration_ms": 55.32,
+      "resolved_by": "aria_role_and_name",
+      "details": null
+    }
+  ],
+  "interventions": []
+}

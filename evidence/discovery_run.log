@@ -1,0 +1,7 @@
+[2026-08-20 23:30:01] [DISCOVERY] Initiating discovery loop for goal: 'Lookup member 12345 and read their current savings balance'
+[2026-08-20 23:30:02] [DISCOVERY] Navigating to target entrypoint: http://127.0.0.1:8000
+[2026-08-20 23:30:03] [DISCOVERY] Element discovered: Role=link, Name='[Member Lookup]', Selector='#nav-member-search' -> Action: CLICK
+[2026-08-20 23:30:04] [DISCOVERY] Element discovered: Role=textbox, Name='Target Member ID', Selector='input#member_id' -> Action: FILL (parameterized: {{inputs.member_id}})
+[2026-08-20 23:30:05] [DISCOVERY] Element discovered: Role=button, Name='Execute Query', Selector='#btn-submit-search' -> Action: CLICK
+[2026-08-20 23:30:06] [DISCOVERY] Element discovered: Target='#savings-balance-val' -> Action: EXTRACT (key: savings_balance)
+[2026-08-20 23:30:06] [DISCOVERY] Capability Artifact compiled and written to evidence/capability_artifact.json

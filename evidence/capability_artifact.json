@@ -1,0 +1,95 @@
+{
+  "capability_id": "lookup_savings_balance",
+  "version": "1.0.0",
+  "description": "Queries a customer record by ID and retrieves their current savings balance.",
+  "target_entry_url": "http://127.0.0.1:8000",
+  "inputs": {
+    "member_id": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "outputs": {
+    "savings_balance": {
+      "type": "string"
+    }
+  },
+  "steps": [
+    {
+      "step_id": "nav_to_member_search",
+      "action": "click",
+      "description": "Navigate to the Member Lookup screen",
+      "target": {
+        "aria_role": "link",
+        "aria_name": "[Member Lookup]",
+        "text_content": "[Member Lookup]",
+        "css_selector": "#nav-member-search",
+        "xpath": null,
+        "description": null
+      },
+      "value_template": null,
+      "output_key": null,
+      "reversible": true,
+      "checkpoint": {
+        "type": "url_contains",
+        "expected": "/members/search",
+        "target": null
+      },
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "fill_member_id",
+      "action": "fill",
+      "description": "Input parameterized member identifier into search box",
+      "target": {
+        "aria_role": "textbox",
+        "aria_name": "Target Member ID",
+        "text_content": null,
+        "css_selector": "input#member_id",
+        "xpath": "//input[@id='member_id']",
+        "description": null
+      },
+      "value_template": "{{inputs.member_id}}",
+      "output_key": null,
+      "reversible": true,
+      "checkpoint": null,
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "click_execute_query",
+      "action": "click",
+      "description": "Submit member lookup query",
+      "target": {
+        "aria_role": "button",
+        "aria_name": "Execute Query",
+        "text_content": "Execute Query",
+        "css_selector": "#btn-submit-search",
+        "xpath": null,
+        "description": null
+      },
+      "value_template": null,
+      "output_key": null,
+      "reversible": true,
+      "checkpoint": null,
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "extract_savings_balance",
+      "action": "extract",
+      "description": "Extract member primary savings balance from account summary table",
+      "target": {
+        "aria_role": null,
+        "aria_name": null,
+        "text_content": "$",
+        "css_selector": "#savings-balance-val",
+        "xpath": "//td[@id='savings-balance-val']",
+        "description": null
+      },
+      "value_template": null,
+      "output_key": "savings_balance",
+      "reversible": true,
+      "checkpoint": null,
+      "timeout_ms": 5000
+    }
+  ]
+}

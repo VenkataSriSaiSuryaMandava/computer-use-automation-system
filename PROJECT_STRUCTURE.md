@@ -1,3 +1,6 @@
+# Project Directory Structure
+
+```text
 ├── mock_bank_app/
 │   ├── __init__.py
 │   └── app.py                  # Standalone legacy-styled mock core banking portal
